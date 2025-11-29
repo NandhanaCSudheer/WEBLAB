@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form name="regform" onsubmit="return Validateform()">
+
+    <label>Your name</label>
+    <input type="text" name="name" id="name" required><br><br>
+
+    <label>Your age</label>
+    <select name="age">
+        <option value="">SELECT</option>
+        <option value="0-10">0-10</option>
+        <option value="11-20">11-20</option>
+        <option value="21-30">21-30</option>
+        <option value="31-40">31-40</option>
+        <option value="41-50">41-50</option>
+    </select>
+    <br><br>
+
+    <label>Your phone number</label>
+    <input type="text" name="phno" id="phno" required><br><br>
+
+    <label>Your email</label>
+    <input type="email" name="email" id="email" required><br><br>
+
+    <label>Your password</label>
+    <input type="password" name="pass" id="pass" required><br><br>
+
+    <input type="submit" name="submit" id="submit">
+
+</form>
+
+<script>
+function Validateform() {
+
+    let name = document.forms["regform"]["name"].value;
+    let ph   = document.forms["regform"]["phno"].value;
+    let email = document.forms["regform"]["email"].value;
+    let pass  = document.forms["regform"]["pass"].value;
+
+  
+    if (pass.length < 8) {
+       alert( "Password must contain minimum 8 characters");
+        
+    }
+
+  
+    if (ph.length != 10 || isNaN(ph)) {
+       alert("phone number must be a 10 digit number");
+      
+    }
+    
+   
+ 
+}
+</script>
+
+</body>
+</html>

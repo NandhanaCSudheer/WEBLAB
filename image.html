@@ -1,0 +1,26 @@
+<html>
+    <head>
+        Trial
+    </head>
+    <body>
+        <div id="str" style="cursor: pointer"> 
+        <img src="any-questions-or-4c394eca66.jpg" id="image">
+        <h1 id="a">
+            Welcome to hogwarts
+        </h1>
+        </div>
+        <script>
+            const str=document.getElementById("str");
+            const image=document.getElementById("image");
+            const text=document.getElementById("a");
+            text.addEventListener("mouseover",function(){
+                image.src="OIP.jpg";
+                text.textContent="Welcome to Kerala";
+            });
+            text.addEventListener("mouseout",function(){
+                image.src="any-questions-or-4c394eca66.jpg";
+                text.textContent=" Welcome to hogwarts";
+            });
+        </script>
+    </body>
+</html>
