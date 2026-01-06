@@ -3,6 +3,8 @@ $con = mysqli_connect("localhost", "root", "", "student");
 if (!$con) {
     die("Connection Failed: " . mysqli_connect_error());
 }
+$sq1 = "SELECT Rollno FROM register";
+$result = mysqli_query($con, $sq1);
 
 
 if (isset($_POST['update'])) {
@@ -11,6 +13,7 @@ if (isset($_POST['update'])) {
     $phone = $_POST['newphn'];
 
     $sq2 = "UPDATE register 
+    
            SET Address='$addr', Phno='$phone'
            WHERE Rollno='$roll'";
     if (mysqli_query($con, $sq2)){
@@ -24,9 +27,9 @@ if (isset($_POST['update'])) {
 
 if (isset($_POST['delete'])) {
     $r = $_POST['delete'];
-    sql2="DELETE FROM register WHERE Rollno='$r'";
-    if(mysqli_query($con, $sq2)){
-     echo "<script>alert('student detials deleted successfully ');</script>";
+    $sl="DELETE FROM register WHERE Rollno='$r'";
+    if(mysqli_query($con, $sl)){
+             echo "<script>alert('student detials deleted successfully ');</script>";
     }
     else{
         echo "<script>alert('Deletion failed')</script>";
@@ -43,14 +46,14 @@ if (isset($_POST['delete'])) {
 <h3>Update Address & Phone</h3>
 <form method="post">
 Select Rollno:
-<select name="rollno">
-    <?php
-    $res = mysqli_query($con, "SELECT Rollno FROM register");
-    while ($row = mysqli_fetch_assoc($res)) {
-        echo "<option value='{$row['Rollno']}'>{$row['Rollno']}</option>";
-    }
-    ?>
-</select><br><br>
+ <label>Rollno:</label>
+        <select name="rollno" required>
+            <option value="">-- Select Roll Number --</option>
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                <option value="<?= $row['Rollno']; ?>"><?= $row['Rollno']; ?></option>
+            <?php } ?>
+        </select>
+        <br><br>
 
 New Address: <input type="text" name="newaddr"><br><br>
 New Phone: <input type="text" name="newphn"><br><br>

@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
     $sq="select username,password from login where username='$uname' AND password='$pass'";
     $result=mysqli_query($con,$sq);
     if(mysqli_num_rows($result)==1){
-        echo "<script>alert('login successfully');window.location.href='link.html'</script>";
+        echo "<script>alert('login successfully');window.location.href='reg.html'</script>";
     }
     else{
         echo "<script>alert('invalid username and password')</script>";
