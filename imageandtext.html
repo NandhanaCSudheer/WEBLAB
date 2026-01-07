@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="str" style="cursor:pointer">
+        <img src="OIP.jpg" id="image">
+        <h1 id="text">Welcome Everyone</h1>
+    </div>
+    <script>
+        const str=document.getElementById("str");
+        const image=document.getElementById("image");
+        const text=document.getElementById("text");
+        text.addEventListener("mouseover",function(){
+            image.src="any-questions-or-4c394eca66.jpg";
+            text.textContent="Have a nice Day";
+        })
+         text.addEventListener("mouseout",function(){
+            image.src="OIP.jpg";
+            text.textContent="Welcome Everyone";
+        })
+    </script>
+</body>
+</html>

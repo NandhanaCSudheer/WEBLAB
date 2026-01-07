@@ -1,0 +1,10 @@
+.Head{
+    font-style: oblique;
+    color: brown;
+     background-color: rgba(243, 216, 174, 0.852);
+}
+h1{
+    color: chocolate;
+    font-style: oblique;
+    background-color: rgb(238, 237, 234);
+}

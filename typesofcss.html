@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        section{
+            font-family:'Times New Roman', Times, serif;
+        }
+        #but{
+            color: black;
+            text-align: center;
+            background-color: rgb(223, 223, 168);
+        }
+    </style>
+    <link rel="stylesheet" href="typesofcss.css">
+</head>
+<body>
+    <div class="main">
+    <header>
+        <center><h1 class="Head">CSS[Cascading Style Sheet]</h1></center>
+        <marquee behaviour="alternate" scrollamount="15" direction="right" onmouseover="this.stop()" onmouseout="this.start()">
+            <h2>Welcome To The CSS World</h2></marquee>
+        <nav id="but">
+            <a href="#INTRO">INTRODUCTION</a>&nbsp;&nbsp;
+            <a href="#PROP">PROPERTIES</a>&nbsp;&nbsp;
+            <a href="#TYPES">TYPES</a>
+        </nav>
+    </header>
+    <section>
+        <a name="INTRO"></a>
+        <center><h1>INTRODUCTION</h1></center>
+        <P style="background-color: aquamarine;">CSS consists of rulesets that are interpreted by the browser and applied to the corresponding HTML elements. A ruleset includes a selector and a declaration block. The selector targets specific HTML elements, while the declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon.</P>
+    <pre style="font-family: 'Times New Roman', Times, serif; color: darkblue; background-color: aquamarine;">Example:
+
+    h1 {
+    color: blue;
+    font-size: 12px;
+    }
+
+       <h2> Why Use CSS?</h2>
+    CSS offers several advantages:
+<ul>
+    <li>Saves Time: Write CSS once and reuse it across multiple HTML pages.</li>
+    <li>Easy Maintenance: Change the style globally with a single modification.</li>
+   <li> Search Engine Friendly: Clean coding technique that improves readability for search engines.</li>
+   <li>Superior Styles: Offers a wider array of attributes compared to HTML.</li>
+   <li> Offline Browsing: CSS can store web applications locally using offline cache, allowing offline viewing.</li>
+    </ul>
+    </pre>
+
+    <a name="PROP"></a>
+    <center><h1>PROPERTIES</h1></center>
+    <pre style="font-family: 'Times New Roman', Times, serif; color: darkblue; background-color: rgb(145, 204, 96);">
+        CSS properties are the foundation of web design, used to style and control the behaviour of HTML elements. They define how elements look and interact on a webpage.
+    Used to control layout, colors, fonts, spacing, and animations on web pages.
+    It is essential for making web pages responsive and accessible across devices.
+    Help maintain consistency and efficiency in web design and development.
+
+    CSS properties define how HTML elements look and behave. They can be grouped into categories:
+
+Category	Example Properties
+Text	    color, font-size, font-family, text-align, line-height
+Background	background-color, background-image, background-size, background-repeat
+Box Model	margin, padding, border, width, height
+Positioning	position, top, left, z-index, float, clear
+Flex/Grid	display, flex-direction, justify-content, grid-template-columns
+Effects	    opacity, box-shadow, text-shadow, transform, transition
+    </pre>
+    <a name="TYPES"></a>
+    <center><h1>TYPES OF CSS</h1></center>
+    <pre style="font-family: 'Times New Roman', Times, serif; color: darkblue; background-color: rgba(134, 231, 37, 0.666);">
+        CSS can be applied to HTML in three main ways — each with its own advantages, limitations, and use cases. Choosing the right type depends on the project size, maintainability needs, and performance considerations.
+        <center><h1><b style="color: crimson; font-style: oblique;" >Inline CSS </b> <br></h1></center>
+        This method applies styles directly to an HTML element using the style attribute. It overrides both internal and external styles for that element. Example:
+Use cases: Quick fixes, overriding specific styles, HTML emails. Drawbacks: Poor maintainability, no reusability, repetitive code.
+ <center><h1><b style="color: crimson; font-style: oblique;">Internal (Embedded) CSS </b><br></h1></center>
+Defined inside a style tag within the head section of the HTML document. Styles apply only to that page. Example:
+Use cases: Single-page websites, small projects. Drawbacks: Not reusable across multiple pages.
+<center> <h1><b style="color: crimson; font-style: oblique;"></b>External CSS</b><br></h1></center>
+ Stored in a separate .css file and linked using the <link> tag. This is the most scalable and maintainable approach. Example: HTML:
+<link rel="stylesheet" href="style.css">
+Use cases: Large projects, multiple pages, consistent styling. Benefits: Centralized control, caching for performance, clean HTML.
+Best Practice: For medium to large projects, External CSS is recommended due to its scalability, maintainability, and performance benefits. Internal CSS is fine for small, single-page designs, while Inline CSS should be reserved for quick, one-off changes.
+    </pre>
+    </section>
+    </div>
+</body>
+</html>

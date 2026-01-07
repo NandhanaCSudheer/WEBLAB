@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String and Math Functions</title>
+</head>
+<body>
+    <h1>String Functions</h1><br><Br>
+    Enter a String: <input type="text" id="str" name="str"><br>
+    Result: <input type="text" id="abc"><br>
+    <button onclick="up()">UpperCase</button>
+    <button onclick="len()">Length</button>
+    <button onclick="index()">Position</button>
+    <button onclick="srch()">Search</button>
+    <script>
+        function up(){
+        let str=document.getElementById("str").value;
+        document.getElementById("abc").value=str.toUpperCase();
+        }
+        function len(){
+        let str=document.getElementById("str").value;
+        document.getElementById("abc").value=str.length();
+        }
+        function index(){
+        let str=document.getElementById("str").value;
+        document.getElementById("abc").value=str.search("a");
+        }
+        function srch(){
+        let str=document.getElementById("str").value;
+        document.getElementById("abc").valueL=str.charAt(5);
+        }
+    </script>
+    <h1>Math Functions</h1><br><Br>
+    Enter a Number: <input type="text" id="num" name="num"><br>
+    Result: <input type="text" id="a"><br>
+    <button onclick="sqrt()">Squareroot</button>
+    <button onclick="cbrt()">Cuberrot</button>
+    <button onclick="abs()">Absolute</button>
+    <button onclick="ran()">Random</button>
+    <button onclick="ceil()">Ceil</button>
+    <button onclick="flr()">Floor</button>
+    <button onclick="pow()">Power</button>
+    <button onclick="rnd()">Round</button>
+    <script>
+        function sqrt(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").value="Squareroot = "+Math.sqrt(n);
+        }
+         function cbrt(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").value="Cuberoot = "+Math.cbrt(n);
+        }
+         function abs(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").value="Absolute Value = "+Math.abs(n);
+        }
+         function ceil(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").value="Ceiled Value = "+Math.ceil(n);
+        }
+         function flr(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").value="Floor Value = "+Math.floor(n);
+        }
+         function ran(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").value="Random Value = "+Math.random(n);
+        }
+         function pow(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").valueL="Power = "+Math.power(n);
+        }
+         function rnd(){
+            let n=parseFloat(document.getElementById("num").value);
+            document.getElementById("a").value="Rounded Value = "+Math.round(n);
+        }
+    </script>
+</body>
+</html>

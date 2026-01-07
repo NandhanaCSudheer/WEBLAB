@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="abc">Changes Color</h1>
+    <button id="a">Click here</button>
+    <script>
+        document.getElementById("a").addEventListener("click",red);
+        function red(){
+            let rcolor="#";
+            for(let i=0;i<6;i++){
+                rcolor+=Math.floor(Math.random()*10);
+            }
+            document.body.style.backgroundColor=rcolor;
+        }
+    </script>
+</body>
+</html>
