@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <style>
+        span {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<form name="myform" onsubmit="return myfunc()">
+<center><h1>Registration Form</h1></center>
+
+<table align="center" border="2">
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name"> <span id="name"></span></td>
+    </tr>
+
+    <tr>
+        <td>Age:</td>
+        <td><input type="number" name="age"> <span id="age"></span></td>
+    </tr>
+
+    <tr>
+        <td>Address:</td>
+        <td><textarea name="addr"></textarea> <span id="addr"></span></td>
+    </tr>
+
+    <tr>
+        <td>Email:</td>
+        <td><input type="email" name="email"> <span id="email"></span></td>
+    </tr>
+
+    <tr>
+        <td>Password:</td>
+        <td><input type="password" name="pass"> <span id="pass"></span></td>
+    </tr>
+
+    <tr>
+        <td>Re-enter Password:</td>
+        <td><input type="password" name="rpass"> <span id="rpass"></span></td>
+    </tr>
+
+    <tr>
+        <td>Phone Number:</td>
+        <td><input type="text" name="phno"> <span id="phno"></span></td>
+    </tr>
+
+    <tr>
+        <td><input type="reset"></td>
+        <td><input type="submit"></td>
+    </tr>
+</table>
+</form>
+
+<script>
+function myfunc() {
+    let valid = true;
+
+    let n = document.myform.name.value.trim();
+    let ag = document.myform.age.value;
+    let ad = document.myform.addr.value.trim();
+    let e = document.myform.email.value.trim();
+    let pass = document.myform.pass.value;
+    let rpass = document.myform.rpass.value;
+    let ph = document.myform.phno.value.trim();
+
+    document.querySelectorAll("span").forEach(s => s.innerHTML = "");
+
+    if (n === "" || !isNaN(n)) {
+        document.getElementById("name").innerHTML = "Name cannot be blank or numeric";
+        valid = false;
+    }
+
+    if (ag === "" || ag < 18) {
+        document.getElementById("age").innerHTML = "Age must be 18 or above";
+        valid = false;
+    }
+
+    if (ad === "") {
+        document.getElementById("addr").innerHTML = "Address cannot be blank";
+        valid = false;
+    }
+
+    if (e === "") {
+        document.getElementById("email").innerHTML = "Email cannot be blank";
+        valid = false;
+    }
+
+    if (pass === "") {
+        document.getElementById("pass").innerHTML = "Password cannot be blank";
+        valid = false;
+    } else if (pass.length < 6) {
+        document.getElementById("pass").innerHTML = "Minimum 6 characters required";
+        valid = false;
+    }
+
+    if (pass !== rpass) {
+        document.getElementById("rpass").innerHTML = "Passwords do not match";
+        valid = false;
+    }
+
+    if (ph.length !== 10 || isNaN(ph)) {
+        document.getElementById("phno").innerHTML = "Phone number must be 10 digits";
+        valid = false;
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>

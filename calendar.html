@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+<style>
+table,th,td{border:1px solid black;border-collapse:collapse;padding:5px;textalign:center;}
+</style>
+</head>
+<body>
+Enter Year:
+<input type="number" id="y">
+<button onclick="cal()">Generate</button>
+<div id="out"></div>
+<script>
+function cal(){
+let y=document.getElementById("y").value;
+let days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+let out="";
+for(let m=0;m<12;m++){
+out+="<h3>"+new Date(y,m).toLocaleString('en',{month:'long'})+"</h3>";
+out+="<table><tr>";
+for(let d of days)out+="<th>"+d+"</th>";
+out+="</tr><tr>";
+let f=new Date(y,m,1).getDay();
+let t=new Date(y,m+1,0).getDate();
+for(let i=0;i<f;i++)out+="<td></td>";
+for(let d=1;d<=t;d++){
+out+="<td>"+d+"</td>";
+25
+if((d+f)%7==0)out+="</tr><tr>";}
+out+="</tr></table>";}
+document.getElementById("out").innerHTML=out;}
+</script>
+</body>
+</html>

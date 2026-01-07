@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ONLINE TEST</h1>
+    <form name="myform" onsubmit="return func()">
+    <h2>Part 1 - Maths</h2>
+    <h2>Q1. What is 2+2?</h2><br>
+        A.<input type="radio">1<BR>
+        B.<input type="radio">2<BR>
+        C.<input type="radio" id="a">4<BR>
+        D.<input type="radio">3<BR><BR>
+    
+    <h2>Q2. What is 25%of 100?</h2><br>
+        A.<input type="radio">50<BR>
+        B.<input type="radio" id="b">25<BR>
+        C.<input type="radio">30<BR>
+        D.<input type="radio">40<BR><BR>
+
+    <h2>Q3. What is 4!?</h2><br>
+        A.<input type="radio">6<BR>
+        B.<input type="radio">4<BR>
+        C.<input type="radio">16<BR>
+        D.<input type="radio" id="c">24<BR><BR>
+
+            <input type="submit" name="submit" id="submit" value="submit">
+            </form>
+    <script>
+        let a=document.getElementById("a").checked;
+        let b=document.getElementById("b").checked;
+        let c=document.getElementById("c").checked;
+        var s=0;
+    function func(){
+        if(document.getElementById("a").checked){
+            s++;
+        }
+        if(document.getElementById("b").checked){
+            s++;
+        }
+        if(document.getElementById("c").checked){
+            s++;
+        }
+        alert ("Your score is: "+s);
+        return False;
+    }
+    </script>
+</body>
+</html>

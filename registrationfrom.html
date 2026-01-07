@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .sub{
+           
+            color: antiquewhite;
+           
+        }
+        .res{
+
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <form name="myform" onsubmit=" return myfunc()">
+    <center><h1>Registration Form</h1></center>
+    <table align="center" border="2">
+        <tr>
+            <Td>
+                Name: 
+            </Td>
+            <td><input type="text" placeholder="Your name" name="name" ><span id="name"></span></td>
+        </tr>
+         <tr>
+            <Td>
+                Age: 
+            </Td>
+            <td><input type="number" placeholder="Your age" name="age" ><span id="age"></span></td>
+        </tr>
+         <tr>
+            <Td>
+                Address: 
+            </Td>
+            <td><textarea placeholder="Address" name="addr" ></textarea> <span id="addr"></span></td>
+        </tr>
+         <tr>
+            <Td>
+                Email Id: 
+            </Td>
+            <td><input type="email" placeholder="email" name="email" ><span id="email"></span>
+            </span></td>
+        </tr>
+         <tr>
+            <Td>
+                Password: 
+            </Td>
+            <td><input type="password" placeholder="password" name="pass" ><span id="pass"></span></td>
+        </tr>
+         <tr>
+            <Td>
+                Re-enter Password: 
+            </Td>
+            <td><input type="password" placeholder="password" name="rpass" ><span id="rpass"></span></td>
+        </tr>
+         <tr>
+            <Td>
+               Phone Number: 
+            </Td>
+            <td><input type="text" placeholder="Mobile Number" name="phno" ><span id="phno"></span></td>
+        </tr>
+        <tr>
+            <td>
+            <div class="res"><input type="reset" value="Reset" id="reset"></td></div>
+            <td><div class="sub"><input type="submit" value="Submit" id="submit"></td></div>
+        </tr>
+    </table>
+     </form>
+     <script>
+        function myfunc(){
+            let n=document.forms["myform"]["name"].value;
+            let ag=document.forms["myform"]["age"].value;
+            let ad=document.forms["myform"]["addr"].value;
+            let e=document.forms["myform"]["email"].value;
+            let pass=document.forms["myform"]["pass"].value;
+            let rpass=document.forms["myform"]["rpass"].value;
+            let ph=document.forms["myform"]["phno"].value;
+            if(n==="" || !isNaN(n)){
+                document.getElementById("name").innerHTML="Cannot Be Blank or Number";
+                return false;
+            }
+            if(ag<18 || ag==="" ){
+                document.getElementById("age").innerHTML="Age must be greater than or equal to 18.Also, age cannot be blank";
+                return false;
+            }
+            if(ad===""){
+                document.getElementById("addr").innerHTML="Cannot Be Blank";       
+                return false;
+            }
+            if(e===""){
+                document.getElementById("email").innerHTML="Cannot Be Blank";   
+                return false;
+            }
+            if(pass===""||rpass===""){
+                document.getElementById("pass").innerHTML="Cannot Be Blank"; 
+                return false;
+            }
+            else if(pass.length<6){
+                document.getElementById("pass").innerHTML="Password must contain atleast 6 characters";
+                return false;
+            }
+            else if(pass!==rpass){
+                document.getElementById("rpass").innerHTML="Passwords deosn't match!!!"; 
+                return false;
+            }
+            if(ph.length!==10){
+                document.getElementById("phno").innerHTML="Phone Number must contain 10 digits";
+                return false;
+            }
+            return True;
+        }
+     </script>
+</body>
+</html>
