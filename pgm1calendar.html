@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+</head>
+<body>
+    <center><h2>Enter a year: <input type="text" id="y"></h2></center>
+    <center><input type="button" onclick="cal()" value="Generate Calendar"></center>
+    <center><div id="out"></div></center>
+    <script>
+        function cal(){
+            let y=document.getElementById("y").value;
+            let out="";
+            let days=["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
+            for( let m=0;m<12;m++){
+                let d=new Date(y,m,1);
+                out+="<h3>"+d.toLocaleString('en',{month:'long'})+"</h3>";
+                out+="<table border='2'><tr>";
+                days.forEach(day=>out+="<th>"+day+"</th>")
+                out+="</tr><tr>";
+                for(let i=0;i<d.getDay();i++)
+                    out+="<td></td>";
+                while(d.getMonth()===m){
+                    out+="<td>"+d.getDate()+"</td>";
+                    if(d.getDay()===6)out+="</tr><tr>";
+                    d.setDate(d.getDate()+1)
+                }
+                out+="</tr></table>";
+        }
+        document.getElementById("out").innerHTML=out;
+    }
+    </script>
+</body>
+</html>
