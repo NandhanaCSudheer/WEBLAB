@@ -60,6 +60,7 @@ if (isset($_POST['submit'])) {
                 <option value="<?= $row['Rollno']; ?>"><?= $row['Rollno']; ?></option>
             <?php } ?>
         </select>
+        
         <br><br>
 
         <label>Science:</label><input type="text" name="m1" id="m1"><br><br>
